@@ -21,7 +21,8 @@ public class PieceJointeEntity {
     }
 
     @Basic
-    @Column(name = "contenue_pj")
+    @Lob
+    @Column(name = "contenue_pj",columnDefinition= "LONGBLOB")
     public byte[] getContenuePj() {
         return contenuePj;
     }

@@ -1,6 +1,9 @@
 package DbConnect;
 
+import Controllers.Login;
+import Controllers.OffresExtract;
 import Entities.AvoirEntity;
+import Entities.OffreEntity;
 import Entities.UserEntity;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
@@ -12,7 +15,16 @@ public class App {
 
     public static void main (String...args){
 
-        Session session = HibernateUtil.getSession();
+//        String a;
+//        a = Login.type("mahdi","root");
+//        System.out.println(a);
+//
+
+//        System.out.println(Login.getUserId("mahdi","root"));
+
+
+        System.out.println(OffresExtract.getOffre(1).getAdresseOffre());
+        /*Session session = HibernateUtil.getSession();
         Transaction tx = session.beginTransaction();
 
         String hql = "SELECT E.usernameUser FROM UserEntity E";
@@ -32,5 +44,9 @@ public class App {
 //
 //        session.close();
 //        HibernateUtil.shutdown();
+    */
+
+
+
     }
 }

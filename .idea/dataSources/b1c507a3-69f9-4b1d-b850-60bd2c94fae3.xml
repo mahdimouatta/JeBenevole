@@ -1141,7 +1141,7 @@
       <ColNames>id_user</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="296" parent="279" name="FK_Admin_id_user">
+    <foreign-key id="296" parent="279" name="FK_Administrateur_id_user">
       <ColNames>id_user</ColNames>
       <RefSchemaName>jees4</RefSchemaName>
       <RefTableName>user</RefTableName>
@@ -1328,7 +1328,7 @@ id_user</ColNames>
     </column>
     <column id="328" parent="283" name="image_B">
       <Position>8</Position>
-      <DataType>mediumblob|0s</DataType>
+      <DataType>tinyblob|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
@@ -1341,7 +1341,6 @@ id_user</ColNames>
     <column id="330" parent="283" name="id_nat">
       <Position>10</Position>
       <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
     <index id="331" parent="283" name="FK_Benevole_id_nat">
@@ -1542,12 +1541,12 @@ id_ex</ColNames>
     </column>
     <column id="367" parent="289" name="remunere">
       <Position>6</Position>
-      <DataType>tinyint(1)|0s</DataType>
+      <DataType>tinyint(4)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="368" parent="289" name="remuneration_offre">
       <Position>7</Position>
-      <DataType>float|0s</DataType>
+      <DataType>double|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
     <column id="369" parent="289" name="Image_offre">

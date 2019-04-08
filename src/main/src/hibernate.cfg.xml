@@ -28,8 +28,24 @@
 
 
 
-
+      <mapping class="Entities.AdministrateurEntity"/>
+      <mapping class="Entities.AppartenirEntity"/>
+      <mapping class="Entities.AppartenirEntityPK"/>
+      <mapping class="Entities.AssociationEntity"/>
+      <mapping class="Entities.AvoirEntity"/>
+      <mapping class="Entities.AvoirEntityPK"/>
+      <mapping class="Entities.BenevoleEntity"/>
+      <mapping class="Entities.CompetenceEntity"/>
+      <mapping class="Entities.DomaineEntity"/>
+      <mapping class="Entities.ExigenceEntity"/>
+      <mapping class="Entities.ExigerEntity"/>
+      <mapping class="Entities.ExigerEntityPK"/>
+      <mapping class="Entities.NationnaliteEntity"/>
+      <mapping class="Entities.OffreEntity"/>
+      <mapping class="Entities.PieceJointeEntity"/>
+      <mapping class="Entities.PostulerEntity"/>
       <mapping class="Entities.UserEntity"/>
+
 
 
   </session-factory>

@@ -99,7 +99,7 @@ public class AssociationEntity {
     }
 
     @Basic
-    @Column(name = "image_ass")
+    @Column(name = "image_ass",columnDefinition = "mediumblob")
     public byte[] getImageAss() {
         return imageAss;
     }

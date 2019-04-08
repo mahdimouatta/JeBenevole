@@ -88,7 +88,7 @@ public class OffreEntity {
     }
 
     @Basic
-    @Column(name = "Image_offre")
+    @Column(name = "Image_offre",columnDefinition = "mediumblob")
     public byte[] getImageOffre() {
         return imageOffre;
     }
