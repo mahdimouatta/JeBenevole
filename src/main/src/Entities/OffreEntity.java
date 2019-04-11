@@ -1,15 +1,19 @@
 package Entities;
 
+import javax.faces.bean.ManagedBean;
 import javax.persistence.*;
+import java.io.Serializable;
 import java.sql.Date;
 import java.util.Arrays;
 
+
+@ManagedBean
 @Entity
 @Table(name = "offre", schema = "jees4", catalog = "")
 public class OffreEntity {
     private int idOffre;
     private String titreOffre;
-    private String adresseOffre;
+    private String adresseOffre ;
     private Date dateDOffre;
     private Date dateFOffre;
     private Byte remunere;

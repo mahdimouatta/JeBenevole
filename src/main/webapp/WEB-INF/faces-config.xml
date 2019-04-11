@@ -3,11 +3,30 @@
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee 
     http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd">
-  
-    <managed-bean>
-        <managed-bean-name>OffreEntity</managed-bean-name>
-        <managed-bean-class>Entities.OffreEntity</managed-bean-class>
-        <managed-bean-scope>request</managed-bean-scope>
 
-    </managed-bean>
+
+
+    <application>
+        <el-resolver>
+            org.springframework.web.jsf.el.SpringBeanFacesELResolver
+        </el-resolver>
+    </application>
+
+
+
+
+        <!--<from-view-id>/Login/main.xhtml</from-view-id>-->
+        <!--<navigation-case>-->
+            <!--<from-outcome>benevole</from-outcome>-->
+            <!--<to-view-id>/Home/main.xhtml</to-view-id>-->
+        <!--</navigation-case>-->
+    <!--</navigation-rule>-->
+    <!--<navigation-rule>-->
+        <!--<from-view-id>/Login/content.xhtml</from-view-id>-->
+        <!--<navigation-case>-->
+            <!--<from-outcome>benevole</from-outcome>-->
+            <!--<to-view-id>/Home/main.xhtml</to-view-id>-->
+        <!--</navigation-case>-->
+
+
 </faces-config>

@@ -7,9 +7,13 @@ import Entities.BenevoleEntity;
 import Entities.UserEntity;
 import org.hibernate.Session;
 
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.RequestScoped;
+import java.io.Serializable;
 import java.util.List;
-
-public class Login {
+@ManagedBean
+@RequestScoped
+public class Login implements Serializable {
 
 
     public static int getUserId(String username,String... pass){ // returns the user id by givving the username and the pass or just the username
@@ -30,37 +34,46 @@ public class Login {
 
     }
 
-    
 
-
-    public static boolean Confirmer(String username,String pass){ // returns true or false depending on the existance of the user
-        boolean conf = false;
+    public static UserEntity getUser(String username,String... pass){
         Session session = HibernateUtil.getSession();
-        UserEntity user = (UserEntity) session.createQuery("from UserEntity where usernameUser = '"+username+"' and passwordUser ='"+pass+"'").getResultList().get(0);
-
-
-        if (user != null) conf =true;
-
-
-        return conf;
-
-
+        UserEntity user;
+        user = (UserEntity) session.createQuery("from UserEntity where usernameUser = '" + username + "' and passwordUser ='" + pass[0] + "'").getResultList().get(0);
+        return user;
     }
 
 
-    public static String type(String username,String pass){ // returns the user type (benevole / association / admin)
+        public String Confirmer() {
+        return "true";
+}
+//    public boolean Confirmer(){ // returns true or false depending on the existance of the user
+//        boolean conf = false;
+//        Session session = HibernateUtil.getSession();
+//        UserEntity user = (UserEntity) session.createQuery("from UserEntity where usernameUser = 'mahdi' and passwordUser ='root'").getResultList().get(0);
+//
+//
+//        if (user != null) conf =true;
+//
+//
+//        return conf;
+//
+//
+//    }
 
-        Session session = HibernateUtil.getSession();
 
-        AdministrateurEntity administrateurEntity = session.get(AdministrateurEntity.class,getUserId(username,pass));
+        public static String type(String username,String pass){ // returns the user type (benevole / association / admin)
 
-        if (administrateurEntity != null) return "admin";
-        else {
-            BenevoleEntity benevoleEntity = session.get(BenevoleEntity.class,getUserId(username,pass));
-            if (benevoleEntity != null) return "benevole";
-            else return "association";
+            Session session = HibernateUtil.getSession();
+
+            AdministrateurEntity administrateurEntity = session.get(AdministrateurEntity.class,getUserId(username,pass));
+
+            if (administrateurEntity != null) return "admin";
+            else {
+                BenevoleEntity benevoleEntity = session.get(BenevoleEntity.class,getUserId(username,pass));
+                if (benevoleEntity != null) return "benevole";
+                else return "association";
+            }
+
         }
-
-    }
 
 }

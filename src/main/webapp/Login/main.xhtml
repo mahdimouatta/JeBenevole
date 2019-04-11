@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+<h:head>
+
+    <meta content="text/html; charset=UTF-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>JSF Integrate Bootstrap</title>
+
+    <!--<h:outputStylesheet library="webjars" name="bootstrap/4.3.1/css/bootstrap.min-jsf.css" />-->
+    <h:outputStylesheet library="webjars" name="bootstrap/4.3.1/css/bootstrap.css" />
+    <h:outputStylesheet library="webjars" name="bootstrap/4.3.1/css/bootstrap.min.css" />
+    <!--<h:outputStylesheet library="webjars" name="jquery/2.1.4/jquery.min.js" />-->
+    <!--<h:outputStylesheet library="webjars" name="bootstrap/4.3.1/js/bootstrap.min.js" />-->
+    <h:outputStylesheet library="webjars" name="font-awesome/5.8.1/css/all-jsf.css" />
+    <h:outputStylesheet library="webjars" name="font-awesome/5.8.1/css/all.css" />
+    <link href="../css/style.css" rel="stylesheet"/>
+    <link href="../css/style2.css" rel="stylesheet"/>
+
+
+
+
+
+
+
+
+</h:head>
+<h:body>
+
+
+    <!--<ui:include src="menu.xhtml" />-->
+    <ui:include src="header.xhtml" />
+    <ui:include src="banner.xhtml" />
+
+
+    <!--<ui:include src="AboutUs.xhtml"/>-->
+
+
+    <div class="container">
+        <ui:include src="content.xhtml" />
+
+    </div>
+    <!--<ui:include src="services.xhtml"/>-->
+    <!--<ui:include src="temoignage.xhtml"/>-->
+
+    <ui:include src="footer.xhtml" />
+
+    <!-- load js at bottom for faster loading-->
+    <h:outputScript library="webjars" name="jquery/2.1.4/jquery.min.js"/>
+    <h:outputScript library="webjars" name="bootstrap/4.3.1/js/bootstrap.bundle.min.js" />
+
+</h:body>
+</html>

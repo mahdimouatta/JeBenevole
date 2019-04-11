@@ -56,6 +56,20 @@
           <version>5.1.5.RELEASE</version>
       </dependency>
 
+      <!-- https://mvnrepository.com/artifact/org.springframework/spring-webmvc -->
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-webmvc</artifactId>
+          <version>5.1.5.RELEASE</version>
+      </dependency>
+
+      <dependency>
+          <groupId>org.springframework</groupId>
+          <artifactId>spring-web</artifactId>
+          <version>5.1.5.RELEASE</version>
+      </dependency>
+
+
 
       <!-- https://mvnrepository.com/artifact/org.hibernate/hibernate-core -->
       <dependency>
@@ -72,6 +86,14 @@
           <version>7.0</version>
       </dependency>
 
+      <!-- https://mvnrepository.com/artifact/org.richfaces/richfaces -->
+      <dependency>
+          <groupId>org.richfaces</groupId>
+          <artifactId>richfaces</artifactId>
+          <version>4.5.1.Final</version>
+      </dependency>
+
+
       <dependency>
           <groupId>org.primefaces.extensions</groupId>
           <artifactId>resources-ckeditor</artifactId>
@@ -80,19 +102,48 @@
 
 
       <!-- https://mvnrepository.com/artifact/javax.faces/jsf-api -->
+      <!--<dependency>-->
+          <!--<groupId>javax.faces</groupId>-->
+          <!--<artifactId>javax.faces-api</artifactId>-->
+          <!--<version>2.3</version>-->
+          <!--<scope>provided</scope>-->
+      <!--</dependency>-->
+
       <dependency>
-          <groupId>javax.faces</groupId>
+          <groupId>com.sun.faces</groupId>
           <artifactId>jsf-api</artifactId>
-          <version>2.1</version>
+          <version>2.2.10</version>
+      </dependency>
+      <dependency>
+          <groupId>com.sun.faces</groupId>
+          <artifactId>jsf-impl</artifactId>
+          <version>2.2.10</version>
+      </dependency>
+
+
+
+      <!-- https://mvnrepository.com/artifact/com.sun.faces/jsf-api -->
+
+
+
+      <dependency>
+          <groupId>javax</groupId>
+          <artifactId>javaee-api</artifactId>
+          <version>8.0</version>
           <scope>provided</scope>
       </dependency>
 
-      <!-- https://mvnrepository.com/artifact/org.glassfish.main.common/glassfish-api -->
       <dependency>
-          <groupId>org.glassfish.main.common</groupId>
-          <artifactId>glassfish-api</artifactId>
-          <version>5.0</version>
+          <groupId>javax.servlet</groupId>
+          <artifactId>javax.servlet-api</artifactId>
+          <version>3.0.1</version>
+          <scope>provided</scope>
       </dependency>
+
+
+
+      <!-- https://mvnrepository.com/artifact/org.glassfish.main.common/glassfish-api -->
+
 
     <!-- https://mvnrepository.com/artifact/mysql/mysql-connector-java -->
     <dependency>
@@ -106,7 +157,36 @@
           <artifactId>javax.el</artifactId>
           <version>3.0.1-b08</version>
       </dependency>
+    <dependency>
+      <groupId>javax.faces</groupId>
+      <artifactId>javax.faces-api</artifactId>
+      <version>2.3</version>
+    </dependency>
 
+
+      <!-- bootstrap & jquery -->
+      <dependency>
+          <groupId>org.webjars</groupId>
+          <artifactId>bootstrap</artifactId>
+          <version>3.3.6</version>
+      </dependency>
+      <dependency>
+          <groupId>org.webjars</groupId>
+          <artifactId>bootstrap</artifactId>
+          <version>4.3.1</version>
+      </dependency>
+
+
+      <dependency>
+          <groupId>org.webjars</groupId>
+          <artifactId>jquery</artifactId>
+          <version>2.1.4</version>
+      </dependency>
+      <dependency>
+          <groupId>org.webjars</groupId>
+          <artifactId>font-awesome</artifactId>
+          <version>5.8.1</version>
+      </dependency>
 
 
   </dependencies>
@@ -146,5 +226,15 @@
         </plugin>
       </plugins>
     </pluginManagement>
+      <plugins>
+          <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-compiler-plugin</artifactId>
+              <configuration>
+                  <source>8</source>
+                  <target>8</target>
+              </configuration>
+          </plugin>
+      </plugins>
   </build>
 </project>

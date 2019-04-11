@@ -4,8 +4,14 @@ import DbConnect.HibernateUtil;
 import Entities.OffreEntity;
 import org.hibernate.Session;
 
+import javax.faces.bean.ManagedBean;
+import java.io.FileOutputStream;
+import java.util.Base64;
 import java.util.List;
 
+
+
+@ManagedBean
 public class OffresExtract { // return a list of all the existent offers
 
 
@@ -38,4 +44,21 @@ public class OffresExtract { // return a list of all the existent offers
         return offres;
     }
 
+    public static String getImage(int id) {
+
+        OffreEntity book = getOffre(id);
+        String imageString= Base64.getEncoder().encodeToString(book.getImageOffre());
+//
+
+        return imageString;
+//        try{
+//            FileOutputStream fos = new FileOutputStream("../webapp/images/test/test.png");
+//            fos.write(book.getImageOffre());
+//            fos.close();
+//        }catch(Exception e){
+//            System.out.println("laaaaaaaa");
+//            e.printStackTrace();
+//        }
+
+    }
 }

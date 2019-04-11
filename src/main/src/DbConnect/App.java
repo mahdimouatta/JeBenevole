@@ -1,5 +1,6 @@
 package DbConnect;
 
+import Beans.Offre;
 import Controllers.Login;
 import Controllers.OffresExtract;
 import Entities.AvoirEntity;
@@ -22,8 +23,9 @@ public class App {
 
 //        System.out.println(Login.getUserId("mahdi","root"));
 
-
-        System.out.println(OffresExtract.getOffre(1).getAdresseOffre());
+        Offre offre = new Offre(2);
+//        System.out.println(Login.Confirmer());
+//        System.out.println(OffresExtract.getAdresse(1));
         /*Session session = HibernateUtil.getSession();
         Transaction tx = session.beginTransaction();
 
