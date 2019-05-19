@@ -3,7 +3,7 @@
         xmlns:ui="http://java.sun.com/jsf/facelets"
         xmlns:h="http://java.sun.com/jsf/html"
 >
-    <!-- gallery -->
+    <!-- offers -->
     <section class="portfolio-wthree align-w3 py-5" id="portfolio">
         <h:form action="#{offers.offres}" method="post" >
 
@@ -165,10 +165,17 @@
             <!--<h:form action="#{offers.offres}" method="post" >-->
                 <ui:repeat value="#{offers.offres}" var="o">
                     <div id="gal#{o.offreEntity.idOffre}" class="popup-effect animate">
-                        <div class="popup">
+                        <div class="popup" onscroll="">
                             <img src="data:image/png;base64,#{o.images}" alt="Popup Image" class="img-fluid" />
-                            <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>
-                            <a class="close" href="#gallery">x</a>
+                            <p class="mt-4">Association : #{o.associationEntity.nomAss}</p>
+                            <p class="mt-4">Adresse : #{o.offreEntity.adresseOffre}</p>
+                            <p class="mt-4">Date de début : #{o.offreEntity.dateDOffre}</p>
+                            <a class="close" href="#offers">x</a>
+                            <hr/>
+                                <a href="#">
+                                    <span class="fa fa-plus-circle fa-2x"> Plus d'infos</span>
+                                </a>
+
                         </div>
                     </div>
                 </ui:repeat>
@@ -179,7 +186,7 @@
                 <!--<div class="popup">-->
                     <!--<img src="../images/g2.jpg" alt="Popup Image" class="img-fluid" />-->
                     <!--<p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
-                    <!--<a class="close" href="#gallery">x</a>-->
+                    <!--<a class="close" href="#offers">x</a>-->
                 <!--</div>-->
             <!--</div>-->
             <!--&lt;!&ndash; //popup &ndash;&gt;-->
@@ -188,7 +195,7 @@
                 <!--<div class="popup">-->
                     <!--<img src="../images/g3.jpg" alt="Popup Image" class="img-fluid" />-->
                     <!--<p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
-                    <!--<a class="close" href="#gallery">x</a>-->
+                    <!--<a class="close" href="#offers">x</a>-->
                 <!--</div>-->
             <!--</div>-->
             <!--&lt;!&ndash; //popup3 &ndash;&gt;-->
@@ -197,7 +204,7 @@
                 <!--<div class="popup">-->
                     <!--<img src="../images/g4.jpg" alt="Popup Image" class="img-fluid" />-->
                     <!--<p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
-                    <!--<a class="close" href="#gallery">x</a>-->
+                    <!--<a class="close" href="#offers">x</a>-->
                 <!--</div>-->
             <!--</div>-->
             <!--&lt;!&ndash; //popup &ndash;&gt;-->
@@ -206,7 +213,7 @@
                 <!--<div class="popup">-->
                     <!--<img src="../images/g5.jpg" alt="Popup Image" class="img-fluid" />-->
                     <!--<p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
-                    <!--<a class="close" href="#gallery">x</a>-->
+                    <!--<a class="close" href="#offers">x</a>-->
                 <!--</div>-->
             <!--</div>-->
             <!--&lt;!&ndash; //popup &ndash;&gt;-->
@@ -215,7 +222,7 @@
                 <!--<div class="popup">-->
                     <!--<img src="../images/g6.jpg" alt="Popup Image" class="img-fluid" />-->
                     <!--<p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
-                    <!--<a class="close" href="#gallery">x</a>-->
+                    <!--<a class="close" href="#offers">x</a>-->
                 <!--</div>-->
             <!--</div>-->
             <!--&lt;!&ndash; //popup &ndash;&gt;-->
@@ -224,7 +231,7 @@
                 <!--<div class="popup">-->
                     <!--<img src="../images/s3.jpg" alt="Popup Image" class="img-fluid" />-->
                     <!--<p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
-                    <!--<a class="close" href="#gallery">x</a>-->
+                    <!--<a class="close" href="#offers">x</a>-->
                 <!--</div>-->
             <!--</div>-->
             <!--&lt;!&ndash; //popup &ndash;&gt;-->
@@ -233,7 +240,7 @@
                 <!--<div class="popup">-->
                     <!--<img src="../images/s2.jpg" alt="Popup Image" class="img-fluid" />-->
                     <!--<p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
-                    <!--<a class="close" href="#gallery">x</a>-->
+                    <!--<a class="close" href="#offers">x</a>-->
                 <!--</div>-->
             <!--</div>-->
             <!--&lt;!&ndash; //popup &ndash;&gt;-->
@@ -242,13 +249,13 @@
                 <!--<div class="popup">-->
                     <!--<img src="../images/s1.jpg" alt="Popup Image" class="img-fluid" />-->
                     <!--<p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
-                    <!--<a class="close" href="#gallery">x</a>-->
+                    <!--<a class="close" href="#offers">x</a>-->
                 <!--</div>-->
             <!--</div>-->
             <!--&lt;!&ndash; //popup &ndash;&gt;-->
         </div>
         </h:form>
     </section>
-    <!-- //gallery -->
+    <!-- //offers -->
 
 </ui:composition>

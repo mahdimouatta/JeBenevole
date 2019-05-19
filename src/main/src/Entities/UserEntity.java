@@ -119,4 +119,11 @@ public class UserEntity {
         result = 31 * result + (passwordUser != null ? passwordUser.hashCode() : 0);
         return result;
     }
+
+
+    public int getIdUser(String s){
+        Session session = HibernateUtil.getSession();
+        UserEntity userEntity = (UserEntity) session.createQuery("from UserEntity where usernameUser ='"+s+"'").getResultList().get(0);
+        return userEntity.getIdUser();
+    }
 }

@@ -116,23 +116,26 @@ public class SignUp {
 
 
             Session session = HibernateUtil.getSession();
-            Transaction tx = session.beginTransaction();
+            session.beginTransaction();
             UserEntity user = new UserEntity();
             BenevoleEntity benevole = new BenevoleEntity();
-            NationnaliteEntity nationnalite = new NationnaliteEntity();
 //            nationnalite.setIdNat(5);
-            user.setIdUser(10);
             user.setPasswordUser(passwordUser1);
             user.setUsernameUser(usernameUser);
-            benevole.setIdUser(10);
-            benevole.setIdNat(5);
+            session.save(user);
+            session.getTransaction().commit();
+
+            session.beginTransaction();
+
+
+
+            benevole.setIdUser(user.getIdUser(usernameUser));
             benevole.setEmailB(emailB);
             benevole.setnTeleB(nTeleB);
             benevole.setNomB(nomB);
             benevole.setPrenomB(prenomB);
 
 //            session.save(nationnalite);
-            session.save(user);
             session.save(benevole);
             session.getTransaction().commit();
             return "done";
