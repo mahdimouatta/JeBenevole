@@ -13,7 +13,7 @@ import java.io.Serializable;
 import java.util.List;
 @ManagedBean
 @RequestScoped
-public class Login implements Serializable {
+public class Login {
 
 
     public static int getUserId(String username,String... pass){ // returns the user id by givving the username and the pass or just the username
@@ -43,22 +43,23 @@ public class Login implements Serializable {
     }
 
 
-        public String Confirmer() {
-        return "true";
-}
-//    public boolean Confirmer(){ // returns true or false depending on the existance of the user
-//        boolean conf = false;
-//        Session session = HibernateUtil.getSession();
-//        UserEntity user = (UserEntity) session.createQuery("from UserEntity where usernameUser = 'mahdi' and passwordUser ='root'").getResultList().get(0);
-//
-//
-//        if (user != null) conf =true;
-//
-//
-//        return conf;
-//
-//
-//    }
+//        public String Confirmer() {
+//            return "success";
+//        }
+    public boolean Confirmer(){ // returns true or false depending on the existance of the user
+        boolean conf = false;
+        Session session = HibernateUtil.getSession();
+        List<UserEntity> users = (List<UserEntity>) session.createQuery("from UserEntity where usernameUser = 'mahd' and passwordUser ='root'").getResultList();
+        if (users.size()!=0){
+            conf =true;
+        }
+
+
+
+        return conf;
+
+
+    }
 
 
         public static String type(String username,String pass){ // returns the user type (benevole / association / admin)

@@ -1,5 +1,7 @@
 <ui:composition
         xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:h="http://java.sun.com/jsf/html"
         xmlns:ui="http://java.sun.com/jsf/facelets">
 
 
@@ -7,8 +9,8 @@
     <div class="contact-wthree py-5">
         <div class="container py-xl-5 py-lg-3">
             <div class="wthree_pvt_title text-center">
-                <h4 class="w3pvt-title">Login</h4>
-                <p class="sub-title">Se connecter a votre compte</p>
+                <h4 class="w3pvt-title">Sign Up</h4>
+                <p class="sub-title">Créer un nouveau compte</p>
             </div>
             <div class="row">
                 <div class="col-lg-5">
@@ -17,12 +19,13 @@
                         <p>Commencer une nouvelle aventure</p>
                     </div>
                     <hr/>
-                    <p>Se connecter, vous permet de postuler aux offres proposées par les entreprises. </p>
-                    <p>Si vous ne posseder pas un compte veuillez créer un en cliquant sur le boutons Sign-Up </p>
+                    <p>La création d'un compte vous permet de postuler aux offres proposées par les entreprises. </p>
+                    <p>Comme il vous permet de recevoire des offre de la part des associations </p>
+                    <p>Si vous posséder un compte veuillez vous connectez en cliquant sur Login </p>
 
                     <br/>
                     <br/>
-                    <button type="submit" class="btn btn-w3_pvt btn-block w-100 font-weight-bold text-uppercase bg-success">Sign Up</button>
+                    <button type="button" onclick="location.href='../Login/main.xhtml'" class="btn btn-w3_pvt btn-block w-100 font-weight-bold text-uppercase bg-success">Login</button>
 
 
                     <!--&lt;!&ndash; map &ndash;&gt;-->
@@ -36,20 +39,25 @@
                 <div class="col-lg-6 mt-lg-0 mt-5" data-aos="zoom-in">
                     <!-- form grid -->
                     <div class="register-top1">
-                        <form action="#" method="get" class="register-wthree">
+                        <h:form action="#{signUp.createBenevole}" method="post" class="register-wthree">
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>
                                             First name
                                         </label>
-                                        <input class="form-control" type="text" placeholder="Johnson" name="name" required=""/>
+                                        <p:inputText styleClass="form-control text-center" value="#{signUp.usernameUser}" type="text" placeholder="Johnson" name="name" required=""/>
+
+                                        <!--<input class="form-control" type="text" placeholder="xxxxxxx" name="name" required=""/>-->
                                     </div>
                                     <div class="col-md-6 mt-md-0 mt-4">
                                         <label>
                                             Last name
                                         </label>
-                                        <input class="form-control" type="text" placeholder="Mk" name="name" required=""/>
+                                        <p:inputText styleClass="form-control text-center" value="#{signUp.prenomB}" type="text" placeholder="Johnson" name="name" required=""/>
+                                        <p:inputText styleClass="form-control text-center" value="#{signUp.nomB}" type="text" placeholder="Johnson" name="name" required=""/>
+
+                                        <!--<input class="form-control" type="text" placeholder="xxxxxxx" name="name" required=""/>-->
                                     </div>
                                 </div>
                             </div>
@@ -59,32 +67,52 @@
                                         <label>
                                             Mobile
                                         </label>
-                                        <input class="form-control" type="text" placeholder="xxxx xxxxx" name="mobile" required=""/>
+                                        <p:inputText styleClass="form-control text-center" value="#{signUp.nTeleB}" type="text" placeholder="Johnson" name="name" required=""/>
+
+                                        <!--<input class="form-control" type="text" placeholder="xxxx xxxxx" name="mobile" required=""/>-->
                                     </div>
                                     <div class="col-md-6 mt-md-0 mt-4">
                                         <label>
                                             Email
                                         </label>
-                                        <input class="form-control" type="email" placeholder="example@email.com" name="email" required=""/>
+                                        <p:inputText styleClass="form-control text-center" value="#{signUp.emailB}" type="text" placeholder="Johnson" name="name" required=""/>
+
+                                        <!--<input class="form-control" type="email" placeholder="example@email.com" name="email" required=""/>-->
                                     </div>
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="row">
-                                    <div class="col-md-12">
+                                    <div class="col-md-6">
                                         <label>
-                                            Your message
+                                            Password
                                         </label>
-                                        <textarea placeholder="type your message here" class="form-control" required=""/>
+                                        <p:inputText styleClass="form-control text-center" value="#{signUp.passwordUser1}" type="text" placeholder="Johnson" name="name" required=""/>
+
+                                        <!--<input class="form-control" type="text" placeholder="xxxx xxxxx" name="mobile" required=""/>-->
+                                    </div>
+                                    <div class="col-md-6 mt-md-0 mt-4">
+                                        <label>
+                                            Retype Password
+                                        </label>
+                                        <p:inputText styleClass="form-control text-center" value="#{signUp.passwordUser2}" type="text" placeholder="Johnson" name="name" required=""/>
+
+                                        <!--<input class="form-control" type="email" placeholder="xxxx xxxxx" name="email" required=""/>-->
                                     </div>
                                 </div>
                             </div>
+
+                            <br/>
+                            <br/>
+
                             <div class="row mt-3">
                                 <div class="col-md-12">
-                                    <button type="submit" class="btn btn-w3_pvt btn-block w-100 font-weight-bold text-uppercase bg-theme1">Login</button>
+                                    <p:commandButton type="submit" styleClass="btn btn-w3_pvt btn-block w-100 font-weight-bold text-uppercase bg-theme1" action="#{signUp.createBenevole}" value="Sign Up"/>
+
+                                    <!--<button type="submit" class="btn btn-w3_pvt btn-block w-100 font-weight-bold text-uppercase bg-theme1">Login</button>-->
                                 </div>
                             </div>
-                        </form>
+                        </h:form>
                     </div>
                     <!--  //form grid ends here -->
                 </div>

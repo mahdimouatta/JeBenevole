@@ -23,6 +23,7 @@ public class OffreEntity {
 
     @Id
     @Column(name = "id_offre")
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     public int getIdOffre() {
         return idOffre;
     }

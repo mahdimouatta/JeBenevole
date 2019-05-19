@@ -1,6 +1,6 @@
 package Beans;
 
-import Controllers.OffresExtract;
+//import Controllers.OffresExtract;
 import Entities.OffreEntity;
 
 import java.sql.Date;
@@ -19,20 +19,20 @@ public class Offre {
 
     
 
-    public Offre(int id){
-        OffreEntity offreEntity = OffresExtract.getOffre(id);
-
-        this.idOffre = offreEntity.getIdOffre();
-        this.titreOffre = offreEntity.getTitreOffre();
-        this.adresseOffre = offreEntity.getAdresseOffre();
-        this.dateDOffre = offreEntity.getDateDOffre();
-        this.dateFOffre = offreEntity.getDateFOffre();
-        this.remunere = offreEntity.getRemunere();
-        this.remunerationOffre = offreEntity.getRemunerationOffre();
-        this.imageOffre = offreEntity.getImageOffre();
-        this.idUser = offreEntity.getIdUser();
-
-    }
+//    public Offre(int id){
+//        OffreEntity offreEntity = OffresExtract.getOffre(id);
+//
+//        this.idOffre = offreEntity.getIdOffre();
+//        this.titreOffre = offreEntity.getTitreOffre();
+//        this.adresseOffre = offreEntity.getAdresseOffre();
+//        this.dateDOffre = offreEntity.getDateDOffre();
+//        this.dateFOffre = offreEntity.getDateFOffre();
+//        this.remunere = offreEntity.getRemunere();
+//        this.remunerationOffre = offreEntity.getRemunerationOffre();
+//        this.imageOffre = offreEntity.getImageOffre();
+//        this.idUser = offreEntity.getIdUser();
+//
+//    }
 
     public int getIdOffre() {
         return idOffre;

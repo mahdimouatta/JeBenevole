@@ -1,22 +1,31 @@
 package Entities;
 
+import Controllers.Benevole;
+import DbConnect.HibernateUtil;
+import org.hibernate.Session;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.Arrays;
+import java.util.Base64;
+import java.util.List;
+
 
 @Entity
 @Table(name = "benevole", schema = "jees4", catalog = "")
 public class BenevoleEntity {
-    private String nomB;
-    private String prenomB;
-    private Date dateNessB;
-    private String adresseB;
-    private String nTeleB;
-    private String emailB;
-    private String descriptionB;
-    private byte[] imageB;
-    private int idUser;
-    private int idNat;
+        private String nomB;
+        private String prenomB;
+        private Date dateNessB;
+        private String adresseB;
+        private String nTeleB;
+        private String emailB;
+        private String descriptionB;
+        private byte[] imageB;
+        private int idUser;
+        private int idNat;
 
     @Basic
     @Column(name = "nom_B")
@@ -153,4 +162,45 @@ public class BenevoleEntity {
         result = 31 * result + idNat;
         return result;
     }
+
+//
+//    public boolean creerUser(){
+//        boolean result = true;
+//        Session session = HibernateUtil.getSession();
+//        if(!UserEntity.VerifierExistance()){
+//
+//        }
+//
+//
+//
+//        return result;
+//    }
+
+    public static BenevoleEntity getBenevole(int id){ // get the benevole with the id given
+        Session session = HibernateUtil.getSession();
+        BenevoleEntity benevole = (BenevoleEntity) session.createQuery("from BenevoleEntity where idUser ="+ id +"").getResultList().get(0);
+        return benevole;
+    }
+
+
+
+    public String getImage(BenevoleEntity benevole) {
+
+//        BenevoleEntity benevole = getBenevole(id);
+        String imageString= Base64.getEncoder().encodeToString(benevole.getImageB());
+//
+
+        return imageString;
+//        try{
+//            FileOutputStream fos = new FileOutputStream("../webapp/images/test/test.png");
+//            fos.write(book.getImageOffre());
+//            fos.close();
+//        }catch(Exception e){
+//            System.out.println("laaaaaaaa");
+//            e.printStackTrace();
+//        }
+
+    }
+
+
 }

@@ -7,13 +7,51 @@
 
 
     <application>
+
         <el-resolver>
             org.springframework.web.jsf.el.SpringBeanFacesELResolver
         </el-resolver>
     </application>
 
 
+    <navigation-rule>
+        <from-view-id>/Login/main.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>true</from-outcome>
+            <to-view-id>/Benevole/main.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>false</from-outcome>
+            <to-view-id>/SignUp/main.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
 
+
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/SignUp/main.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>done</from-outcome>
+            <to-view-id>/Home/main.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+        <navigation-case>
+            <from-outcome>failed</from-outcome>
+            <to-view-id>/Login/main.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
+
+    <navigation-rule>
+        <from-view-id>/Benevole/main.xhtml</from-view-id>
+        <navigation-case>
+            <from-outcome>logout</from-outcome>
+            <to-view-id>/Home/main.xhtml</to-view-id>
+            <redirect/>
+        </navigation-case>
+    </navigation-rule>
 
         <!--<from-view-id>/Login/main.xhtml</from-view-id>-->
         <!--<navigation-case>-->

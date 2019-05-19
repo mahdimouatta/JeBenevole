@@ -1,6 +1,16 @@
 package Entities;
 
+import Controllers.Benevole;
+import Controllers.Login;
+import DbConnect.HibernateUtil;
+import org.hibernate.Session;
+import org.hibernate.Transaction;
+
+import javax.faces.bean.ManagedBean;
+import javax.faces.bean.SessionScoped;
 import javax.persistence.*;
+import java.util.List;
+
 
 @Entity
 @Table(name = "user", schema = "jees4", catalog = "")
@@ -52,6 +62,55 @@ public class UserEntity {
 
         return true;
     }
+
+//    public boolean Confirmer(){ // returns true or false depending on the existance of the user
+//        boolean conf = false;
+//        Session session = HibernateUtil.getSession();
+//        List<UserEntity> users = (List<UserEntity>) session.createQuery("from UserEntity where usernameUser = '"+usernameUser+"' and passwordUser = '"+passwordUser+"'").getResultList();
+////        UserEntity userEntity = new UserEntity();
+////        userEntity.setUsernameUser(usernameUser);
+////        userEntity.setPasswordUser(passwordUser);
+////        Transaction tx = session.getTransaction();
+////        tx.begin();
+////        session.saveOrUpdate(userEntity);
+////        tx.commit();
+//        BenevoleEntity benevoleEntity = BenevoleEntity.getBenevole(users.get(0).getIdUser());
+//        if (users.size()!=0){
+//            Benevole benevole = new Benevole(users.get(1),benevoleEntity);
+//            conf =true;
+//        }
+//
+//
+//
+//        return conf;
+//
+//
+//    }
+
+
+    public boolean VerifierExistance(){
+        boolean exist = false;
+        Session session = HibernateUtil.getSession();
+        List<UserEntity> users = (List<UserEntity>) session.createQuery("from UserEntity where usernameUser = '"+usernameUser+"'").getResultList();
+        if (users.size()!=0){
+            exist =true;
+        }
+
+
+
+        return exist;
+    }
+
+
+    public String userType(){
+
+        return Login.type(usernameUser,passwordUser);// returns admin / benevole / association
+
+
+    }
+
+
+
 
     @Override
     public int hashCode() {

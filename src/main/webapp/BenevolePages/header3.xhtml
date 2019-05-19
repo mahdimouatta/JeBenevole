@@ -1,0 +1,182 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:h="http://java.sun.com/jsf/html">
+    <style>
+
+        /*.avatar-circle {*/
+            /*width: 55px;*/
+            /*height: 55px;*/
+            /*background-color: #9fcdff;*/
+            /*text-align: center;*/
+            /*border-radius: 50%;*/
+            /*-webkit-border-radius: 50%;*/
+            /*-moz-border-radius: 50%;*/
+        /*}*/
+
+
+        /*.initials {*/
+            /*position: relative;*/
+            /*top: 13px; !* 25% of parent *!*/
+            /*font-size: 25px; !* 50% of parent *!*/
+            /*line-height: 25px; !* 50% of parent *!*/
+            /*color: #fff;*/
+            /*font-family: "Courier New", monospace;*/
+            /*font-weight: bold;*/
+        /*}*/
+        /*.img-fluid{*/
+            /*width: 55px;*/
+            /*height: 55px;*/
+            /*border-radius: 50%;*/
+            /*-webkit-border-radius: 50%;*/
+            /*-moz-border-radius: 50%;*/
+
+        /*}*/
+    </style>
+
+    <!-- Main jumbotron for a primary marketing message or call to action -->
+    <!--<div class="jumbotron">-->
+    <!--<div class="container">-->
+    <!--<h1>Hello, world!</h1>-->
+    <!--<p>This is a template for a simple marketing or informational website. It includes a large callout called a jumbotron and three supporting pieces of content. Use it as a starting point to create something more unique.</p>-->
+    <!--<p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more »</a></p>-->
+    <!--</div>-->
+    <!--</div>-->
+
+
+
+
+    <!--<h1 class="site-heading text-center text-white d-none d-lg-block">-->
+    <!--<span class="site-heading-upper text-primary mb-3">A Free Bootstrap 4 Business Theme</span>-->
+    <!--<span class="site-heading-lower">Business Casual</span>-->
+    <!--</h1>-->
+    <!--<nav class="navbar navbar-expand-lg navbar-dark py-lg-4" id="mainNav">-->
+    <!--<div class="container">-->
+    <!--<a class="navbar-brand text-uppercase text-expanded font-weight-bold d-lg-none" href="#">Start Bootstrap</a>-->
+    <!--<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">-->
+    <!--<span class="navbar-toggler-icon"></span>-->
+    <!--</button>-->
+    <!--<div class="collapse navbar-collapse" id="navbarResponsive">-->
+    <!--<ul class="navbar-nav mx-auto">-->
+    <!--<li class="nav-item active px-lg-4">-->
+    <!--<a class="nav-link text-uppercase text-expanded" href="#">Home-->
+    <!--<span class="sr-only">(current)</span>-->
+    <!--</a>-->
+    <!--</li>-->
+    <!--<li class="nav-item px-lg-4">-->
+    <!--<a class="nav-link text-uppercase text-expanded" href="#">About</a>-->
+    <!--</li>-->
+    <!--<li class="nav-item px-lg-4">-->
+    <!--<a class="nav-link text-uppercase text-expanded" href="#">Products</a>-->
+    <!--</li>-->
+    <!--<li class="nav-item px-lg-4">-->
+    <!--<a class="nav-link text-uppercase text-expanded" href="#">Store</a>-->
+    <!--</li>-->
+    <!--</ul>-->
+    <!--</div>-->
+    <!--</div>-->
+    <!--</nav>-->
+
+
+
+
+    <div class="main-top" id="home">
+        <!-- header -->
+        <header>
+            <div class="container-fluid">
+                <div class="header d-md-flex justify-content-between align-items-center py-3 px-xl-5 px-lg-3 px-2">
+                    <!-- logo -->
+                    <div id="logo">
+                        <h1><a href="main.xhtml">Je Benevole</a></h1>
+                    </div>
+                    <!-- //logo -->
+                    <!-- nav -->
+                    <div class="nav_w3ls">
+                        <nav>
+                            <label for="drop" class="toggle">Menu</label>
+                            <input type="checkbox" id="drop" />
+                            <ul class="menu">
+                                <li><a href="main.xhtml" class="active">Home</a></li>
+                                <li><a href="about.html">Mission</a></li>
+                                <li><a href="gallery.html">Offres</a></li>
+                                <li>
+                                    <!-- First Tier Drop Down -->
+                                    <label for="drop-2" class="toggle toogle-2">Dropdown <span class="fa fa-angle-down" aria-hidden="true"></span>
+                                    </label>
+                                    <a href="#">
+                                        <img src="data:image/png;base64, #{benevole.image}" alt="" style="width: 55px;height: 55px;border-radius: 50%;-webkit-border-radius: 50%;-moz-border-radius: 50%;" class="img-fluid" />
+                                        <!--<img src="../images/testi2.jpg" alt="" class="img-fluid" />-->
+
+                                        <!--<span class="fa fa-angle-down" aria-hidden="true"></span>-->
+                                    </a>
+                                    <input type="checkbox" id="drop-2" />
+                                    <ul>
+                                        <li><a href="#services" class="drop-text">Profile</a></li>
+                                        <li><a href="about.html" class="drop-text">Mes applications</a></li>
+                                        <li><a href="about.html" class="drop-text">Messages</a></li>
+                                        <li><a href="#testi" class="drop-text">Contacter</a></li>
+                                        <h:form action="#{benevole.logout}" method="post">
+                                        <li><h:commandLink action="#{benevole.logout}" class="drop-text"><i class="fas fa-sign-out-alt"></i> Deconnecter</h:commandLink></li>
+                                        </h:form>
+                                    </ul>
+                                </li>
+                                <li><a href="gallery.html"><i class="fas fa-envelope-open-text fa-2x"></i></a></li>
+
+
+                            </ul>
+                        </nav>
+                    </div>
+                    <!-- //nav -->
+                </div>
+            </div>
+        </header>
+        <!-- //header -->
+
+        <!-- banner -->
+        <div class="banner_w3lspvt">
+            <div class="csslider infinity" id="slider1">
+                <input type="radio" name="slides" checked="checked" id="slides_1" />
+                <input type="radio" name="slides" id="slides_2" />
+                <input type="radio" name="slides" id="slides_3" />
+                <ul class="banner_slide_bg">
+                    <li>
+                        <div class="container">
+                            <div class="w3ls_banner_txt text-center">
+                                <h3 class="w3ls_pvt-title text-wh text-uppercase let">Je Benevole</h3>
+                                <p class="text-li">Aider... C'est vivre</p>
+                                <a href="https://w3layouts.com/free-responsive-html5-css3-website-templates/" target="_blank" class="btn button-style mt-sm-5 mt-4">Browse All</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="container">
+                            <div class="w3ls_banner_txt text-center">
+                                <h3 class="w3ls_pvt-title text-wh text-uppercase let">Je Benevole</h3>
+                                <p class="text-li">Le bonheur le plus doux est celui qu’on partage.</p>
+                                <a href="https://w3layouts.com/free-responsive-html5-css3-website-templates/" target="_blank" class="btn button-style mt-sm-5 mt-4">Browse All</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="container">
+                            <div class="w3ls_banner_txt text-center">
+                                <h3 class="w3ls_pvt-title text-wh text-uppercase let">Je Benevole</h3>
+                                <p class="text-bl">Le bonheur qu’on a vient du bonheur qu’on donne.</p>
+                                <a href="https://w3layouts.com/free-responsive-html5-css3-website-templates/" target="_blank" class="btn button-style mt-sm-5 mt-4">Browse All</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="arrows">
+                    <label for="slides_1"></label>
+                    <label for="slides_2"></label>
+                    <label for="slides_3"></label>
+                </div>
+            </div>
+        </div>
+        <!-- //banner -->
+    </div>
+    <!-- //main banner -->
+
+</ui:composition>

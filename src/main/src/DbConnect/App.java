@@ -2,10 +2,8 @@ package DbConnect;
 
 import Beans.Offre;
 import Controllers.Login;
-import Controllers.OffresExtract;
-import Entities.AvoirEntity;
-import Entities.OffreEntity;
-import Entities.UserEntity;
+//import Controllers.OffresExtract;
+import Entities.*;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
@@ -23,17 +21,32 @@ public class App {
 
 //        System.out.println(Login.getUserId("mahdi","root"));
 
-        Offre offre = new Offre(2);
+//        Offre offre = new Offre(2);
 //        System.out.println(Login.Confirmer());
 //        System.out.println(OffresExtract.getAdresse(1));
-        /*Session session = HibernateUtil.getSession();
+        Session session = HibernateUtil.getSession();
         Transaction tx = session.beginTransaction();
+        UserEntity user = new UserEntity();
+        BenevoleEntity benevole = new BenevoleEntity();
+        NationnaliteEntity nationnalite = new NationnaliteEntity();
+        nationnalite.setIdNat(5);
+        user.setIdUser(5);
+        user.setPasswordUser("azertyuiop0-");
+        user.setUsernameUser("root");
+        benevole.setIdUser(5);
+        benevole.setIdNat(5);
 
-        String hql = "SELECT E.usernameUser FROM UserEntity E";
-        Query query = session.createQuery(hql);
-        List results = query.list();
+        session.save(nationnalite);
+        session.save(user);
+        session.save(benevole);
+        session.getTransaction().commit();
 
-        System.out.println(results.get(0));
+
+//        String hql = "SELECT E.usernameUser FROM UserEntity E";
+//        Query query = session.createQuery(hql);
+//        List results = query.list();
+//
+//        System.out.println(results.get(0));
 
 //
 //        UserEntity book = new UserEntity();
@@ -46,7 +59,7 @@ public class App {
 //
 //        session.close();
 //        HibernateUtil.shutdown();
-    */
+
 
 
 

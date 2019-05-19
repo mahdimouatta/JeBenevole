@@ -1,7 +1,8 @@
 <ui:composition
         xmlns="http://www.w3.org/1999/xhtml"
         xmlns:ui="http://java.sun.com/jsf/facelets"
-        xmlns:p="http://primefaces.org/ui">
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:h="http://java.sun.com/jsf/html">
 
 
 
@@ -37,14 +38,14 @@
                 <div class="col-lg-6 mt-lg-0 mt-5" data-aos="zoom-in">
                     <!-- form grid -->
                     <div class="register-top1 text-center">
-                        <form action="#" method="get" class="register-wthree">
+                        <h:form action="#{login.Confirmer}" method="post" class="register-wthree">
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-12">
                                         <label>
                                             First name
                                         </label>
-                                        <p:inputText styleClass="form-control text-center" type="text" placeholder="Johnson" name="name" required=""/>
+                                        <p:inputText styleClass="form-control text-center" value="#{benevole.userEntity.usernameUser}" type="text" placeholder="Johnson" name="name" required=""/>
                                         <!--<input class="form-control text-center" type="text" placeholder="Johnson" name="name" required=""/>-->
                                     </div>
 
@@ -56,7 +57,7 @@
                                         <label>
                                             Mobile
                                         </label>
-                                        <input class="form-control text-center" type="text" placeholder="xxxx xxxxx" name="mobile" required=""/>
+                                        <p:inputText class="form-control text-center" type="password" value="#{benevole.userEntity.passwordUser}" placeholder="xxxx xxxxx" name="mobile" required=""/>
                                     </div>
 
                                 </div>
@@ -64,10 +65,12 @@
 
                             <div class="row mt-3">
                                 <div class="col-md-12">
-                                    <button type="submit" onclick="" class="btn btn-w3_pvt btn-block w-100 font-weight-bold text-uppercase bg-theme1">Login</button>
+                                    <!--<button type="submit" onclick="" class="btn btn-w3_pvt btn-block w-100 font-weight-bold text-uppercase bg-theme1">Login</button>-->
+                                    <p:commandButton type="submit" styleClass="btn btn-w3_pvt btn-block w-100 font-weight-bold text-uppercase bg-theme1" action="#{benevole.Confirmer}" value="Login"/>
+
                                 </div>
                             </div>
-                        </form>
+                        </h:form>
                     </div>
                     <!--  //form grid ends here -->
                 </div>

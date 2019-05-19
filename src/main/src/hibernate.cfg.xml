@@ -17,7 +17,7 @@
     <property name="hibernate.show_sql">false</property>
 
     <!-- manage automatic database creation -->
-    <property name="hibernate.hbm2ddl.auto">validate</property>
+    <property name="hibernate.hbm2ddl.auto">update</property>
 
     <!-- dbcp connection pool configuration -->
     <property name="hibernate.dbcp.initialSize">5</property>
