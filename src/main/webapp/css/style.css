@@ -6,6 +6,10 @@
   License URL: http://creativecommons.org/licenses/by/3.0/
   --*/
     /* Reset Code */
+nav a:visited {
+    color: #fff;
+}
+
 body {
     padding: 0;
     margin: 0;
@@ -188,6 +192,7 @@ nav a {
 
 nav a:hover {
     color: #fff;
+    font-size: 17px;
     opacity: .8;
 }
 
@@ -196,7 +201,8 @@ nav a:hover {
 nav ul ul {
     display: none;
     position: absolute;
-    top: 25px;
+    top: 40px;
+    left: 180px;
     background: #333;
     padding: 10px;
     -webkit-border-radius: 4px;
@@ -243,6 +249,11 @@ nav ul ul li a {
     margin: 0;
     margin-bottom: 10px;
 }
+
+    nav ul ul li a:hover{
+        color: #0cc5b7;
+
+    }
 
 /* Second, Third and more Tiers
  * We move the 2nd and 3rd etc tier dropdowns to the left
@@ -1404,6 +1415,12 @@ p.count-text {
     -o-transition: 0.5s all;
     -ms-transition: 0.5s all;
 }
+
+    ul li a img{
+        height: 100px;
+
+
+    }
 
 .img-grid:hover {
     -webkit-box-shadow: 0 20px 40px -10px rgba(0, 0, 0, .3);

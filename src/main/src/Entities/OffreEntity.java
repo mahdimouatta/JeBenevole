@@ -5,6 +5,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 import java.sql.Date;
 import java.util.Arrays;
+import java.util.Base64;
 
 
 @ManagedBean
@@ -145,5 +146,38 @@ public class OffreEntity {
         result = 31 * result + Arrays.hashCode(imageOffre);
         result = 31 * result + (idUser != null ? idUser.hashCode() : 0);
         return result;
+    }
+
+
+
+
+    public String getImage(OffreEntity offreEntity) {
+
+//        BenevoleEntity benevole = getBenevole(id);
+        String imageString= Base64.getEncoder().encodeToString(offreEntity.getImageOffre());
+//
+
+        return imageString;
+//        try{
+//            FileOutputStream fos = new FileOutputStream("../webapp/images/test/test.png");
+//            fos.write(book.getImageOffre());
+//            fos.close();
+//        }catch(Exception e){
+//            System.out.println("laaaaaaaa");
+//            e.printStackTrace();
+//        }
+
+    }
+
+    private String descoffre;
+
+    @Basic
+    @Column(name = "desc_offre")
+    public String getDescoffre() {
+        return descoffre;
+    }
+
+    public void setDescoffre(String descoffre) {
+        this.descoffre = descoffre;
     }
 }

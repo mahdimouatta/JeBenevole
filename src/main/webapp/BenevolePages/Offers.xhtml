@@ -1,0 +1,254 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:ui="http://java.sun.com/jsf/facelets"
+        xmlns:h="http://java.sun.com/jsf/html"
+>
+    <!-- gallery -->
+    <section class="portfolio-wthree align-w3 py-5" id="portfolio">
+        <h:form action="#{offers.offres}" method="post" >
+
+        <div class="container py-xl-5 py-lg-3">
+            <div class="wthree_pvt_title text-center">
+                <h4 class="w3pvt-title">Nos offres</h4>
+                <p class="sub-title">add your caption here</p>
+            </div>
+            <div>
+                <ul class="demo row">
+
+                        <ui:repeat value="#{offers.offres}" var="o">
+                            <li class="col-lg-4">
+                                <div class="img-grid">
+                                    <div class="Portfolio-grid1">
+                                        <a href="#gal#{o.offreEntity.idOffre}">
+                                            <img src="data:image/png;base64,#{o.images}" alt=" " class="img-fluid" />
+                                        </a>
+                                    </div>
+                                    <div class="port-desc text-center">
+                                        <h6 class="main-title-w3pvt text-center">#{o.offreEntity.titreOffre.toUpperCase()}</h6>
+                                        <p> #{o.offreEntity.descoffre}
+                                        </p>
+                                    </div>
+                                </div>
+                            </li>
+                        </ui:repeat>
+                    <!--<li class="col-lg-4">-->
+                        <!--<div class="img-grid">-->
+                            <!--<div class="Portfolio-grid1">-->
+                                <!--<a href="#gal2">-->
+                                    <!--<img src="../images/g2.jpg" alt=" " class="img-fluid" />-->
+                                <!--</a>-->
+                            <!--</div>-->
+                            <!--<div class="port-desc text-center">-->
+                                <!--<h6 class="main-title-w3pvt text-center">Some Description</h6>-->
+                                <!--<p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed-->
+                                    <!--diam-->
+                                    <!--nonumy eirmod tempor invidunt ut.-->
+                                <!--</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="col-lg-4">-->
+                        <!--<div class="img-grid">-->
+                            <!--<div class="Portfolio-grid1">-->
+                                <!--<a href="#gal3">-->
+                                    <!--<img src="../images/g3.jpg" alt=" " class="img-fluid" />-->
+                                <!--</a>-->
+                            <!--</div>-->
+                            <!--<div class="port-desc text-center">-->
+                                <!--<h6 class="main-title-w3pvt text-center">Some Description</h6>-->
+                                <!--<p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed-->
+                                    <!--diam-->
+                                    <!--nonumy eirmod tempor invidunt ut.-->
+                                <!--</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="col-lg-4">-->
+                        <!--<div class="img-grid">-->
+                            <!--<div class="Portfolio-grid1">-->
+                                <!--<a href="#gal4">-->
+                                    <!--<img src="../images/g4.jpg" alt=" " class="img-fluid" />-->
+                                <!--</a>-->
+                            <!--</div>-->
+                            <!--<div class="port-desc text-center">-->
+                                <!--<h6 class="main-title-w3pvt text-center">Some Description</h6>-->
+                                <!--<p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed-->
+                                    <!--diam-->
+                                    <!--nonumy eirmod tempor invidunt ut.-->
+                                <!--</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="col-lg-4">-->
+                        <!--<div class="img-grid">-->
+                            <!--<div class="Portfolio-grid1">-->
+                                <!--<a href="#gal5">-->
+                                    <!--<img src="../images/g5.jpg" alt=" " class="img-fluid" />-->
+                                <!--</a>-->
+                            <!--</div>-->
+                            <!--<div class="port-desc text-center">-->
+                                <!--<h6 class="main-title-w3pvt text-center">Some Description</h6>-->
+                                <!--<p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed-->
+                                    <!--diam-->
+                                    <!--nonumy eirmod tempor invidunt ut.-->
+                                <!--</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="col-lg-4">-->
+                        <!--<div class="img-grid">-->
+                            <!--<div class="Portfolio-grid1">-->
+                                <!--<a href="#gal6">-->
+                                    <!--<img src="../images/g6.jpg" alt=" " class="img-fluid" />-->
+                                <!--</a>-->
+                            <!--</div>-->
+                            <!--<div class="port-desc text-center">-->
+                                <!--<h6 class="main-title-w3pvt text-center">Some Description</h6>-->
+                                <!--<p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed-->
+                                    <!--diam-->
+                                    <!--nonumy eirmod tempor invidunt ut.-->
+                                <!--</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="col-lg-4">-->
+                        <!--<div class="img-grid">-->
+                            <!--<div class="Portfolio-grid1">-->
+                                <!--<a href="#gal7">-->
+                                    <!--<img src="../images/s3.jpg" alt=" " class="img-fluid" />-->
+                                <!--</a>-->
+                            <!--</div>-->
+                            <!--<div class="port-desc text-center">-->
+                                <!--<h6 class="main-title-w3pvt text-center">Some Description</h6>-->
+                                <!--<p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed-->
+                                    <!--diam-->
+                                    <!--nonumy eirmod tempor invidunt ut.-->
+                                <!--</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="col-lg-4">-->
+                        <!--<div class="img-grid">-->
+                            <!--<div class="Portfolio-grid1">-->
+                                <!--<a href="#gal8">-->
+                                    <!--<img src="../images/s2.jpg" alt=" " class="img-fluid" />-->
+                                <!--</a>-->
+                            <!--</div>-->
+                            <!--<div class="port-desc text-center">-->
+                                <!--<h6 class="main-title-w3pvt text-center">Some Description</h6>-->
+                                <!--<p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed-->
+                                    <!--diam-->
+                                    <!--nonumy eirmod tempor invidunt ut.-->
+                                <!--</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="col-lg-4">-->
+                        <!--<div class="img-grid">-->
+                            <!--<div class="Portfolio-grid1">-->
+                                <!--<a href="#gal9">-->
+                                    <!--<img src="../images/s1.jpg" alt=" " class="img-fluid" />-->
+                                <!--</a>-->
+                            <!--</div>-->
+                            <!--<div class="port-desc text-center">-->
+                                <!--<h6 class="main-title-w3pvt text-center">Some Description</h6>-->
+                                <!--<p> Lorem ipsum dolor sit amet,Stet clita kasd gubergren, sed diam voluptua. sed-->
+                                    <!--diam-->
+                                    <!--nonumy eirmod tempor invidunt ut.-->
+                                <!--</p>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                </ul>
+            </div>
+            <!-- popup-->
+            <!--<h:form action="#{offers.offres}" method="post" >-->
+                <ui:repeat value="#{offers.offres}" var="o">
+                    <div id="gal#{o.offreEntity.idOffre}" class="popup-effect animate">
+                        <div class="popup">
+                            <img src="data:image/png;base64,#{o.images}" alt="Popup Image" class="img-fluid" />
+                            <p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>
+                            <a class="close" href="#gallery">x</a>
+                        </div>
+                    </div>
+                </ui:repeat>
+            <!--</h:form>-->
+            <!-- //popup -->
+            <!--&lt;!&ndash; popup&ndash;&gt;-->
+            <!--<div id="gal2" class="popup-effect animate">-->
+                <!--<div class="popup">-->
+                    <!--<img src="../images/g2.jpg" alt="Popup Image" class="img-fluid" />-->
+                    <!--<p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
+                    <!--<a class="close" href="#gallery">x</a>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; //popup &ndash;&gt;-->
+            <!--&lt;!&ndash; popup&ndash;&gt;-->
+            <!--<div id="gal3" class="popup-effect animate">-->
+                <!--<div class="popup">-->
+                    <!--<img src="../images/g3.jpg" alt="Popup Image" class="img-fluid" />-->
+                    <!--<p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
+                    <!--<a class="close" href="#gallery">x</a>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; //popup3 &ndash;&gt;-->
+            <!--&lt;!&ndash; popup&ndash;&gt;-->
+            <!--<div id="gal4" class="popup-effect animate">-->
+                <!--<div class="popup">-->
+                    <!--<img src="../images/g4.jpg" alt="Popup Image" class="img-fluid" />-->
+                    <!--<p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
+                    <!--<a class="close" href="#gallery">x</a>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; //popup &ndash;&gt;-->
+            <!--&lt;!&ndash; popup&ndash;&gt;-->
+            <!--<div id="gal5" class="popup-effect animate">-->
+                <!--<div class="popup">-->
+                    <!--<img src="../images/g5.jpg" alt="Popup Image" class="img-fluid" />-->
+                    <!--<p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
+                    <!--<a class="close" href="#gallery">x</a>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; //popup &ndash;&gt;-->
+            <!--&lt;!&ndash; popup&ndash;&gt;-->
+            <!--<div id="gal6" class="popup-effect animate">-->
+                <!--<div class="popup">-->
+                    <!--<img src="../images/g6.jpg" alt="Popup Image" class="img-fluid" />-->
+                    <!--<p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
+                    <!--<a class="close" href="#gallery">x</a>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; //popup &ndash;&gt;-->
+            <!--&lt;!&ndash; popup&ndash;&gt;-->
+            <!--<div id="gal7" class="popup-effect animate">-->
+                <!--<div class="popup">-->
+                    <!--<img src="../images/s3.jpg" alt="Popup Image" class="img-fluid" />-->
+                    <!--<p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
+                    <!--<a class="close" href="#gallery">x</a>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; //popup &ndash;&gt;-->
+            <!--&lt;!&ndash; popup&ndash;&gt;-->
+            <!--<div id="gal8" class="popup-effect animate">-->
+                <!--<div class="popup">-->
+                    <!--<img src="../images/s2.jpg" alt="Popup Image" class="img-fluid" />-->
+                    <!--<p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
+                    <!--<a class="close" href="#gallery">x</a>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; //popup &ndash;&gt;-->
+            <!--&lt;!&ndash; popup&ndash;&gt;-->
+            <!--<div id="gal9" class="popup-effect animate">-->
+                <!--<div class="popup">-->
+                    <!--<img src="../images/s1.jpg" alt="Popup Image" class="img-fluid" />-->
+                    <!--<p class="mt-4">Nulla viverra pharetra se, eget pulvinar neque pharetra ac int. placerat placerat dolor.</p>-->
+                    <!--<a class="close" href="#gallery">x</a>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--&lt;!&ndash; //popup &ndash;&gt;-->
+        </div>
+        </h:form>
+    </section>
+    <!-- //gallery -->
+
+</ui:composition>

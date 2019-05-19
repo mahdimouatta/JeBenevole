@@ -1539,117 +1539,122 @@ id_ex</ColNames>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="371" parent="289" name="FK_offre_id_user">
+    <column id="371" parent="289" name="desc_offre">
+      <Position>10</Position>
+      <DataType>varchar(200)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="372" parent="289" name="FK_offre_id_user">
       <ColNames>id_user</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="372" parent="289" name="PRIMARY">
+    <key id="373" parent="289" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_offre</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="373" parent="289" name="FK_offre_id_user">
+    <foreign-key id="374" parent="289" name="FK_offre_id_user">
       <ColNames>id_user</ColNames>
       <RefSchemaName>jees4</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id_user</RefColNames>
     </foreign-key>
-    <column id="374" parent="290" name="id_pj">
+    <column id="375" parent="290" name="id_pj">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="375" parent="290" name="contenue_pj">
+    <column id="376" parent="290" name="contenue_pj">
       <Position>2</Position>
       <DataType>longblob|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="376" parent="290" name="id_user">
+    <column id="377" parent="290" name="id_user">
       <Position>3</Position>
       <DataType>int(11)|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="377" parent="290" name="FK_Piece_jointe_id_user">
+    <index id="378" parent="290" name="FK_Piece_jointe_id_user">
       <ColNames>id_user</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="378" parent="290" name="PRIMARY">
+    <key id="379" parent="290" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_pj</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="379" parent="290" name="FK_Piece_jointe_id_user">
+    <foreign-key id="380" parent="290" name="FK_Piece_jointe_id_user">
       <ColNames>id_user</ColNames>
       <RefSchemaName>jees4</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id_user</RefColNames>
     </foreign-key>
-    <column id="380" parent="291" name="id_user">
+    <column id="381" parent="291" name="id_user">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="381" parent="291" name="id_offre">
+    <column id="382" parent="291" name="id_offre">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="382" parent="291" name="FK_Postuler_id_offre">
+    <index id="383" parent="291" name="FK_Postuler_id_offre">
       <ColNames>id_offre</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="383" parent="291" name="PRIMARY">
+    <key id="384" parent="291" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_user
 id_offre</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="384" parent="291" name="FK_Postuler_id_user">
+    <foreign-key id="385" parent="291" name="FK_Postuler_id_user">
       <ColNames>id_user</ColNames>
       <RefSchemaName>jees4</RefSchemaName>
       <RefTableName>user</RefTableName>
       <RefColNames>id_user</RefColNames>
     </foreign-key>
-    <foreign-key id="385" parent="291" name="FK_Postuler_id_offre">
+    <foreign-key id="386" parent="291" name="FK_Postuler_id_offre">
       <ColNames>id_offre</ColNames>
       <RefSchemaName>jees4</RefSchemaName>
       <RefTableName>offre</RefTableName>
       <RefColNames>id_offre</RefColNames>
     </foreign-key>
-    <column id="386" parent="292" name="id_user">
+    <column id="387" parent="292" name="id_user">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>1</SequenceIdentity>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="387" parent="292" name="username_user">
+    <column id="388" parent="292" name="username_user">
       <Position>2</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="388" parent="292" name="password_user">
+    <column id="389" parent="292" name="password_user">
       <Position>3</Position>
       <DataType>varchar(50)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="389" parent="292" name="username_user">
+    <index id="390" parent="292" name="username_user">
       <ColNames>username_user</ColNames>
       <Unique>1</Unique>
       <Type>btree</Type>
     </index>
-    <key id="390" parent="292" name="PRIMARY">
+    <key id="391" parent="292" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id_user</ColNames>
       <Primary>1</Primary>
     </key>
-    <key id="391" parent="292" name="username_user">
+    <key id="392" parent="292" name="username_user">
       <ColNames>username_user</ColNames>
       <UnderlyingIndexName>username_user</UnderlyingIndexName>
     </key>

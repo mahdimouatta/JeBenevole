@@ -1,111 +1,56 @@
 package Beans;
 
 //import Controllers.OffresExtract;
+import Entities.AssociationEntity;
+import Entities.ExigenceEntity;
+import Entities.ExigerEntity;
 import Entities.OffreEntity;
 
+import javax.annotation.PostConstruct;
 import java.sql.Date;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Offre {
+    OffreEntity offreEntity;
+    AssociationEntity associationEntity;
+    List<ExigenceEntity> exigences;
 
-    private int idOffre;
-    private String titreOffre;
-    private String adresseOffre;
-    private Date dateDOffre;
-    private Date dateFOffre;
-    private Byte remunere;
-    private Double remunerationOffre;
-    private byte[] imageOffre;
-    private Integer idUser;
 
-    
-
-//    public Offre(int id){
-//        OffreEntity offreEntity = OffresExtract.getOffre(id);
-//
-//        this.idOffre = offreEntity.getIdOffre();
-//        this.titreOffre = offreEntity.getTitreOffre();
-//        this.adresseOffre = offreEntity.getAdresseOffre();
-//        this.dateDOffre = offreEntity.getDateDOffre();
-//        this.dateFOffre = offreEntity.getDateFOffre();
-//        this.remunere = offreEntity.getRemunere();
-//        this.remunerationOffre = offreEntity.getRemunerationOffre();
-//        this.imageOffre = offreEntity.getImageOffre();
-//        this.idUser = offreEntity.getIdUser();
-//
-//    }
-
-    public int getIdOffre() {
-        return idOffre;
+    public OffreEntity getOffreEntity() {
+        return offreEntity;
     }
 
-    public void setIdOffre(int idOffre) {
-        this.idOffre = idOffre;
+    public void setOffreEntity(OffreEntity offreEntity) {
+        this.offreEntity = offreEntity;
     }
 
-    public String getTitreOffre() {
-        return titreOffre;
+    public AssociationEntity getAssociationEntity() {
+        return associationEntity;
     }
 
-    public void setTitreOffre(String titreOffre) {
-        this.titreOffre = titreOffre;
+    public void setAssociationEntity(AssociationEntity associationEntity) {
+        this.associationEntity = associationEntity;
     }
 
-    public String getAdresseOffre() {
-        return adresseOffre;
+    public List<ExigenceEntity> getExigences() {
+        return exigences;
     }
 
-    public void setAdresseOffre(String adresseOffre) {
-        this.adresseOffre = adresseOffre;
+    public void setExigences(List<ExigenceEntity> exigences) {
+        this.exigences = exigences;
     }
 
-    public Date getDateDOffre() {
-        return dateDOffre;
+    public Offre(OffreEntity offreEntity, AssociationEntity associationEntity, List<ExigenceEntity> exigences) {
+        this.offreEntity = offreEntity;
+        this.associationEntity = associationEntity;
+        this.exigences = exigences;
     }
 
-    public void setDateDOffre(Date dateDOffre) {
-        this.dateDOffre = dateDOffre;
-    }
 
-    public Date getDateFOffre() {
-        return dateFOffre;
+    public String getImages() {
+            return offreEntity.getImage(offreEntity);
     }
-
-    public void setDateFOffre(Date dateFOffre) {
-        this.dateFOffre = dateFOffre;
-    }
-
-    public Byte getRemunere() {
-        return remunere;
-    }
-
-    public void setRemunere(Byte remunere) {
-        this.remunere = remunere;
-    }
-
-    public Double getRemunerationOffre() {
-        return remunerationOffre;
-    }
-
-    public void setRemunerationOffre(Double remunerationOffre) {
-        this.remunerationOffre = remunerationOffre;
-    }
-
-    public byte[] getImageOffre() {
-        return imageOffre;
-    }
-
-    public void setImageOffre(byte[] imageOffre) {
-        this.imageOffre = imageOffre;
-    }
-
-    public Integer getIdUser() {
-        return idUser;
-    }
-
-    public void setIdUser(Integer idUser) {
-        this.idUser = idUser;
-    }
-
 
 }
 

@@ -3,6 +3,7 @@ package Entities;
 import javax.persistence.*;
 import java.sql.Date;
 import java.util.Arrays;
+import java.util.Base64;
 
 @Entity
 @Table(name = "association", schema = "jees4", catalog = "")
@@ -154,4 +155,24 @@ public class AssociationEntity {
         result = 31 * result + idUser;
         return result;
     }
+
+    public String getImage(AssociationEntity associationEntity) {
+
+//        BenevoleEntity benevole = getBenevole(id);
+        String imageString= Base64.getEncoder().encodeToString(associationEntity.getImageAss());
+//
+
+        return imageString;
+//        try{
+//            FileOutputStream fos = new FileOutputStream("../webapp/images/test/test.png");
+//            fos.write(book.getImageOffre());
+//            fos.close();
+//        }catch(Exception e){
+//            System.out.println("laaaaaaaa");
+//            e.printStackTrace();
+//        }
+
+    }
+
+
 }
