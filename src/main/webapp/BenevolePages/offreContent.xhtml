@@ -1,0 +1,66 @@
+<ui:composition
+        xmlns="http://www.w3.org/1999/xhtml"
+        xmlns:p="http://primefaces.org/ui"
+        xmlns:h="http://java.sun.com/jsf/html"
+        xmlns:ui="http://java.sun.com/jsf/facelets">
+
+
+
+    <div class="contact-wthree py-5">
+        <div class="container py-xl-5 py-lg-3">
+            <div class="wthree_pvt_title text-center">
+                <h4 class="w3pvt-title" style=" font-size: 70px">#{offers.offres.get(offers.getid(1)).offreEntity.titreOffre}</h4>
+            </div>
+            <div class="row">
+                <div class="col-lg-6">
+                    <img src="data:image/png;base64, #{offers.offres.get(offers.getid(1)).images}" alt="" style="" class="img-fluid" />
+
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="w3_pvt-contact-top">
+                        <h1>Informations </h1>
+                        <p>Commencer une nouvelle aventure</p>
+                    </div>
+                    <hr/>
+                    <h4>Adresse : #{offers.offres.get(offers.getid(1)).offreEntity.adresseOffre} </h4>
+                    <br/>
+                    <h4>Date de debut : #{offers.offres.get(offers.getid(1)).offreEntity.dateDOffre}</h4>
+                    <br/>
+                    <h4>Date de fin : #{offers.offres.get(offers.getid(1)).offreEntity.dateFOffre}</h4>
+                    <br/>
+                    <h4>Description : #{offers.offres.get(offers.getid(1)).offreEntity.descoffre} </h4>
+                    <br/>
+                    <h4>Association : #{offers.offres.get(offers.getid(1)).associationEntity.nomAss} </h4>
+                    <br/>
+                    <h4>Description de l'association : #{offers.offres.get(offers.getid(1)).associationEntity.descriptionAss}</h4>
+                    <br/>
+                    <h4>Email de l'association : #{offers.offres.get(offers.getid(1)).associationEntity.email1Ass} </h4>
+                    <br/>
+                    <h4>Num Tele de l'association : #{offers.offres.get(offers.getid(1)).associationEntity.nTele1Ass} </h4>
+                    <br/>
+                    <h4>Remuneration : #{offers.offres.get(offers.getid(1)).offreEntity.remunerationOffre} </h4>
+                    <br/>
+                    <h4>Exigences : #{offers.offres.get(offers.getid(1)).getExig(2)} </h4>
+
+                    <br/>
+                    <br/>
+                    <button type="button" onclick="location.href='../Login/main.xhtml'" class="btn btn-w3_pvt btn-block w-100 font-weight-bold text-uppercase bg-success">Postuler</button>
+
+
+                    <!--&lt;!&ndash; map &ndash;&gt;-->
+                    <!--<div class="map">-->
+                        <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.9940307!3d40.719109700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1441710758555"-->
+                        <!--/>-->
+                    <!--</div>-->
+                    <!--&lt;!&ndash;// map&ndash;&gt;-->
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+    <!-- //contact -->
+
+
+</ui:composition>

@@ -3,6 +3,7 @@ package DbConnect;
 import Beans.Offre;
 import Controllers.Login;
 //import Controllers.OffresExtract;
+import Controllers.Nationalites;
 import Controllers.Offers;
 import Entities.*;
 import org.hibernate.Session;
@@ -65,9 +66,15 @@ public class App {
 
 
 
-        Offers offers = new Offers();
+//        Offers offers = new Offers();
+//
+//        String a = offers.getImages().get(0);
+//        System.out.println(a);
 
-        String a = offers.getImages().get(0);
-        System.out.println(a);
+
+        Nationalites nationalites = new Nationalites();
+        nationalites.init();
+
+        System.out.println(nationalites.getNationnaliteEntities().get(1).getNomNat());
     }
 }

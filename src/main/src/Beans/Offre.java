@@ -7,6 +7,8 @@ import Entities.ExigerEntity;
 import Entities.OffreEntity;
 
 import javax.annotation.PostConstruct;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
@@ -51,6 +53,16 @@ public class Offre {
     public String getImages() {
             return offreEntity.getImage(offreEntity);
     }
+
+    public String getExig(int k){
+        String a="";
+        for(ExigenceEntity s :exigences){
+            a += s.getLabelEx() +", ";
+        }
+    return a;
+    }
+
+
 
 }
 

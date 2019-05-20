@@ -11,6 +11,8 @@ import org.hibernate.Session;
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ApplicationScoped;
 import javax.faces.bean.ManagedBean;
+import javax.faces.context.FacesContext;
+import javax.servlet.http.HttpServletRequest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,6 +66,7 @@ public class Offers {
             }
             exigences.add(exigencesoff);
         }
+
         int a = 0;
         List<Offre> list =new ArrayList<>();
 
@@ -83,5 +86,13 @@ public class Offers {
         return images;
     }
 
+
+    public String getid(int a) {
+        HttpServletRequest request= (HttpServletRequest) FacesContext.getCurrentInstance().getExternalContext().getRequest();
+
+        String value=request.getParameter("id");
+        return value;
     }
+
+}
 

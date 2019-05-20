@@ -18,26 +18,34 @@
     <h:outputStylesheet library="webjars" name="font-awesome/5.8.1/css/all-jsf.css" />
     <h:outputStylesheet library="webjars" name="font-awesome/5.8.1/css/all.css" />
 
-    <h:outputStylesheet name="style.css" />
 
     <link href="../css/style.css" rel="stylesheet"/>
     <link href="../css/style2.css" rel="stylesheet"/>
-
 
 </h:head>
 <h:body>
 
     <!--<ui:include src="menu.xhtml" />-->
     <ui:include src="../BenevolePages/header4.xhtml" />
+    <ui:include src="ModifierProfileContent.xhtml" />
 
 
-    <ui:include src="../BenevolePages/Offers2.xhtml"/>
+
+
+
+    <div class="container">
+        <!--<ui:include src="content.xhtml" />-->
+
+    </div>
+
+
 
     <ui:include src="../BenevolePages/footer.xhtml" />
 
     <!-- load js at bottom for faster loading-->
     <h:outputScript library="webjars" name="jquery/2.1.4/jquery.min.js"/>
     <h:outputScript library="webjars" name="bootstrap/4.3.1/js/bootstrap.bundle.min.js" />
+
 
 </h:body>
 </html>

@@ -2,10 +2,11 @@
         xmlns="http://www.w3.org/1999/xhtml"
         xmlns:p="http://primefaces.org/ui"
         xmlns:h="http://java.sun.com/jsf/html"
-        xmlns:ui="http://java.sun.com/jsf/facelets">
+        xmlns:f="http://java.sun.com/jsf/core"
+        xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 
-
+    <h:form action="#{benevole.update}" method="post" class="register-wthree">
     <div class="contact-wthree py-5">
         <div class="container py-xl-5 py-lg-3">
             <div class="wthree_pvt_title text-center">
@@ -14,39 +15,20 @@
             </div>
             <div class="row">
                 <div class="col-lg-5">
-                    <div class="w3_pvt-contact-top">
-                        <h4>Informations </h4>
-                        <p>Commencer une nouvelle aventure</p>
-                    </div>
-                    <hr/>
-                    <p>La création d'un compte vous permet de postuler aux offres proposées par les entreprises. </p>
-                    <p>Comme il vous permet de recevoire des offre de la part des associations </p>
-                    <p>Si vous posséder un compte veuillez vous connectez en cliquant sur Login </p>
+                    <img src="data:image/png;base64, #{benevole.image}" alt="" style="" class="img-fluid" />
 
-                    <br/>
-                    <br/>
-                    <button type="button" onclick="location.href='../Login/main.xhtml'" class="btn btn-w3_pvt btn-block w-100 font-weight-bold text-uppercase bg-success">Login</button>
-
-
-                    <!--&lt;!&ndash; map &ndash;&gt;-->
-                    <!--<div class="map">-->
-                        <!--<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3023.9503398796587!2d-73.9940307!3d40.719109700000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c25a27e2f24131%3A0x64ffc98d24069f02!2sCANADA!5e0!3m2!1sen!2sin!4v1441710758555"-->
-                        <!--/>-->
-                    <!--</div>-->
-                    <!--&lt;!&ndash;// map&ndash;&gt;-->
                 </div>
                 <div class="offset-1"></div>
                 <div class="col-lg-6 mt-lg-0 mt-5" data-aos="zoom-in">
                     <!-- form grid -->
                     <div class="register-top1">
-                        <h:form action="#{signUp.createBenevole}" method="post" class="register-wthree">
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>
-                                            Username
+                                            Nom
                                         </label>
-                                        <p:inputText styleClass="form-control text-center" value="#{signUp.usernameUser}" type="text" placeholder="Johnson" name="name" required=""/>
+                                        <p:inputText styleClass="form-control text-center" value="#{benevole.benevoleEntity.nomB}" type="text"  name="name" required=""/>
 
                                         <!--<input class="form-control" type="text" placeholder="xxxxxxx" name="name" required=""/>-->
                                     </div>
@@ -54,30 +36,29 @@
                                         <label>
                                             Prenom
                                         </label>
-                                        <p:inputText styleClass="form-control text-center" value="#{signUp.prenomB}" type="text" placeholder="Johnson" name="name" required=""/>
-                                        <!--<p:inputText styleClass="form-control text-center" value="#{signUp.nomB}" type="text" placeholder="Johnson" name="name" required=""/>-->
+                                        <p:inputText styleClass="form-control text-center" value="#{benevole.benevoleEntity.prenomB}" type="text"  name="name" required=""/>
+                                        <!--<p:inputText styleClass="form-control text-center" value="#{signUp.nomB}" type="text"  name="name" required=""/>-->
 
                                         <!--<input class="form-control" type="text" placeholder="xxxxxxx" name="name" required=""/>-->
                                     </div>
                                     <div class="col-md-6 mt-md-0 mt-4">
                                         <label>
-                                            Nom
+                                            Username
                                         </label>
-                                        <!--<p:inputText styleClass="form-control text-center" value="#{signUp.prenomB}" type="text" placeholder="Johnson" name="name" required=""/>-->
-                                        <p:inputText styleClass="form-control text-center" value="#{signUp.nomB}" type="text" placeholder="Johnson" name="name" required=""/>
+                                        <!--<p:inputText styleClass="form-control text-center" value="#{signUp.prenomB}" type="text"  name="name" required=""/>-->
+                                        <p:inputText styleClass="form-control text-center" value="#{benevole.userEntity.usernameUser}" type="text"  name="name" required=""/>
 
                                         <!--<input class="form-control" type="text" placeholder="xxxxxxx" name="name" required=""/>-->
                                     </div>
-
                                 </div>
                             </div>
                             <div class="form-group">
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>
-                                            Mobile
+                                            Date de naissance
                                         </label>
-                                        <p:inputText styleClass="form-control text-center" value="#{signUp.nTeleB}" type="text" placeholder="Johnson" name="name" required=""/>
+                                        <p:inputText styleClass="form-control text-center" value="#{benevole.benevoleEntity.dateNessB}" type="Date"  name="name" required=""/>
 
                                         <!--<input class="form-control" type="text" placeholder="xxxx xxxxx" name="mobile" required=""/>-->
                                     </div>
@@ -85,7 +66,7 @@
                                         <label>
                                             Email
                                         </label>
-                                        <p:inputText styleClass="form-control text-center" value="#{signUp.emailB}" type="text" placeholder="Johnson" name="name" required=""/>
+                                        <p:inputText styleClass="form-control text-center" value="#{benevole.benevoleEntity.emailB}" type="Email"  name="name" required=""/>
 
                                         <!--<input class="form-control" type="email" placeholder="example@email.com" name="email" required=""/>-->
                                     </div>
@@ -95,18 +76,35 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <label>
-                                            Password
+                                            Numero de tele
                                         </label>
-                                        <p:inputText styleClass="form-control text-center" value="#{signUp.passwordUser1}" type="text" placeholder="Johnson" name="name" required=""/>
+                                        <p:inputText styleClass="form-control text-center" value="#{benevole.benevoleEntity.nTeleB}" type="text"  name="name" required=""/>
 
                                         <!--<input class="form-control" type="text" placeholder="xxxx xxxxx" name="mobile" required=""/>-->
                                     </div>
                                     <div class="col-md-6 mt-md-0 mt-4">
                                         <label>
-                                            Retype Password
+                                            Adresse
                                         </label>
-                                        <p:inputText styleClass="form-control text-center" value="#{signUp.passwordUser2}" type="text" placeholder="Johnson" name="name" required=""/>
+                                        <p:inputText styleClass="form-control text-center" value="#{benevole.benevoleEntity.adresseB}" type="text"  name="name" required=""/>
 
+                                        <!--<input class="form-control" type="email" placeholder="xxxx xxxxx" name="email" required=""/>-->
+                                    </div>
+                                    <div class="col-md-6 mt-md-0 mt-4">
+                                        <label>
+                                            Nationnalité
+                                        </label>
+                                            <h:selectOneMenu id="console" value="#{benevole.nationnaliteEntity.nomNat}" styleClass="form-control text-center">
+                                                <c:forEach items="#{benevole.nationalites.nationnaliteEntities}" var="n">
+                                                    <f:selectItem itemValue = "#{n.nomNat}" itemLabel = "#{n.nomNat}" />
+                                                </c:forEach>
+                                            </h:selectOneMenu>
+                                            <!--<p:selectOneMenu styleClass="form-control text-center" value = "#{benevole.nationnaliteEntity.nomNat}">-->
+                                                <!--<c:forEach items="#{benevole.nationalites.nationnaliteEntities}" var="n">-->
+                                                    <!--<f:selectItem itemValue = "#{n.idNat}" itemLabel = "#{n.nomNat}" />-->
+                                                <!--</c:forEach>-->
+                                            <!--</p:selectOneMenu>-->
+                                        <!--<p:inputText styleClass="form-control text-center" value="" type="text"  name="name" required=""/>-->
                                         <!--<input class="form-control" type="email" placeholder="xxxx xxxxx" name="email" required=""/>-->
                                     </div>
                                 </div>
@@ -117,12 +115,11 @@
 
                             <div class="row mt-3">
                                 <div class="col-md-12">
-                                    <p:commandButton type="submit" styleClass="btn btn-w3_pvt btn-block w-100 font-weight-bold text-uppercase bg-theme1" action="#{signUp.createBenevole}" value="Sign Up"/>
+                                    <p:commandButton type="submit" styleClass="btn btn-w3_pvt btn-block w-100 font-weight-bold text-uppercase bg-theme1" action="#{benevole.update}" value="Modifier"/>
 
                                     <!--<button type="submit" class="btn btn-w3_pvt btn-block w-100 font-weight-bold text-uppercase bg-theme1">Login</button>-->
                                 </div>
                             </div>
-                        </h:form>
                     </div>
                     <!--  //form grid ends here -->
                 </div>
@@ -131,5 +128,6 @@
     </div>
     <!-- //contact -->
 
+</h:form>
 
 </ui:composition>

@@ -1,12 +1,24 @@
 package Entities;
 
+import DbConnect.HibernateUtil;
+import org.hibernate.Session;
+
+import javax.annotation.PostConstruct;
+import javax.faces.bean.ApplicationScoped;
+import javax.faces.bean.ManagedBean;
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
+
 @Table(name = "nationnalite", schema = "jees4", catalog = "")
 public class NationnaliteEntity {
     private int idNat;
     private String nomNat;
+
+
+
+
 
     @Id
     @Column(name = "id_nat")
@@ -47,4 +59,13 @@ public class NationnaliteEntity {
         result = 31 * result + (nomNat != null ? nomNat.hashCode() : 0);
         return result;
     }
+
+
+    public int getidnat(String nat){
+        nat = nomNat;
+        Session session = HibernateUtil.getSession();
+        NationnaliteEntity entity= (NationnaliteEntity) session.createQuery("from NationnaliteEntity where nomNat ='"+nat+"'").getResultList().get(0);
+        return entity.idNat;
+    }
+
 }

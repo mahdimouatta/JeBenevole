@@ -1,9 +1,9 @@
 package Controllers;
 
 import DbConnect.HibernateUtil;
-import Entities.BenevoleEntity;
-import Entities.UserEntity;
+import Entities.*;
 import org.hibernate.Session;
+import org.hibernate.Transaction;
 
 import javax.annotation.PostConstruct;
 import javax.faces.bean.ManagedBean;
@@ -12,6 +12,7 @@ import javax.faces.context.ExternalContext;
 import javax.faces.context.FacesContext;
 import javax.servlet.http.HttpServletRequest;
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Base64;
 import java.util.List;
 
@@ -23,10 +24,25 @@ public class Benevole {
 
     private UserEntity userEntity ;
     private BenevoleEntity benevoleEntity ;
+    private NationnaliteEntity nationnaliteEntity;
+    private String competenceEntities ;
+    private Nationalites nationalites;
+
+    public Nationalites getNationalites() {
+        return nationalites;
+    }
+
+    public void setNationalites(Nationalites nationalites) {
+        this.nationalites = nationalites;
+    }
+
     @PostConstruct
     public void init() {
         userEntity = new UserEntity();
         benevoleEntity = new BenevoleEntity();
+        nationnaliteEntity = new NationnaliteEntity();
+        competenceEntities ="";
+        nationalites = new Nationalites();
     }
 //    public Benevole() {
 //    }
@@ -35,6 +51,22 @@ public class Benevole {
 //        this.userEntity = userEntity;
 //        this.benevoleEntity = benevoleEntity;
 //    }
+
+    public NationnaliteEntity getNationnaliteEntity() {
+        return nationnaliteEntity;
+    }
+
+    public void setNationnaliteEntity(NationnaliteEntity nationnaliteEntity) {
+        this.nationnaliteEntity = nationnaliteEntity;
+    }
+
+    public String getCompetenceEntities() {
+        return competenceEntities;
+    }
+
+    public void setCompetenceEntities(String competenceEntities) {
+        this.competenceEntities = competenceEntities;
+    }
 
     public UserEntity getUserEntity() {
         return userEntity;
@@ -64,12 +96,21 @@ public class Benevole {
 //        tx.begin();
 //        session.saveOrUpdate(userEntity);
 //        tx.commit();
-
-        if (users.size()!=0){
+        List<AvoirEntity> av = new ArrayList<>() ;
+        CompetenceEntity com ;
+        if (users.size()!=0) {
             benevoleEntity = BenevoleEntity.getBenevole(users.get(0).getIdUser());
-            conf =true;
-        }
+            conf = true;
 
+            nationnaliteEntity = (NationnaliteEntity) session.createQuery("from NationnaliteEntity where id = " + benevoleEntity.getIdNat() + "").getResultList().get(0);
+            av = session.createQuery("from AvoirEntity where idUser = " + benevoleEntity.getIdUser() + "").getResultList();
+            for (AvoirEntity a : av) {
+                com = (CompetenceEntity) session.createQuery("from CompetenceEntity where idComp ="+a.getIdComp()+"").getResultList().get(0);
+                competenceEntities += com.getLabelComp() + ", ";
+            }
+
+            nationalites.init();
+        }
 
 
         return conf;
@@ -91,6 +132,22 @@ public class Benevole {
 //            System.out.println("laaaaaaaa");
 //            e.printStackTrace();
 //        }
+
+    }
+
+    public String update(){
+        Session session = HibernateUtil.getSession();
+        Transaction tx =session.beginTransaction();
+
+        session.evict(userEntity);
+        session.evict(benevoleEntity);
+        session.evict(nationnaliteEntity);
+        benevoleEntity.setIdNat(nationnaliteEntity.getidnat(nationnaliteEntity.getNomNat()));
+        session.update(benevoleEntity);
+        session.update(userEntity);
+        tx.commit();
+
+        return "update";
 
     }
 
